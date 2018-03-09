@@ -3,18 +3,22 @@
  * It contains typing information for all components that exist in this project
  * and imports for stencil collections that might be configured in your stencil.config.js file
  */
-
-import {
-  MatchResults,
-} from '@stencil/router';
-
 declare global {
+  namespace JSX {
+    interface Element {}
+    export interface IntrinsicElements {}
+  }
+  namespace JSXElements {}
+
   interface HTMLStencilElement extends HTMLElement {
     componentOnReady(): Promise<this>;
     componentOnReady(done: (ele?: this) => void): void;
   }
+
+  interface HTMLAttributes {}
 }
 
+import '@stencil/router';
 
 
 import {
@@ -71,7 +75,7 @@ declare global {
   }
   namespace JSXElements {
     export interface AppProfileAttributes extends HTMLAttributes {
-      match?: MatchResults;
+      user?: any;
     }
   }
 }
