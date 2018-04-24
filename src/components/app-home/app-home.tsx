@@ -14,7 +14,7 @@ export class AppHome {
           on <a href="https://stenciljs.com">stenciljs.com</a> to get started.
         </p>
         <ion-button href="/app-slots">App Slots</ion-button>
-        <ion-button href="/reordered-content">Reordered Content</ion-button>
+        <ion-button href="/shuffle-content">Shuffle Content</ion-button>
         <ion-button href="/profile/stencil">Profile page</ion-button>
       </div>
     );

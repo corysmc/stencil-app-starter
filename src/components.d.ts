@@ -158,4 +158,70 @@ declare global {
   }
 }
 
+
+declare global {
+
+  namespace StencilComponents {
+    interface ScrollableRow {
+      'company': any;
+    }
+  }
+
+  interface HTMLScrollableRowElement extends StencilComponents.ScrollableRow, HTMLStencilElement {}
+
+  var HTMLScrollableRowElement: {
+    prototype: HTMLScrollableRowElement;
+    new (): HTMLScrollableRowElement;
+  };
+  interface HTMLElementTagNameMap {
+    'scrollable-row': HTMLScrollableRowElement;
+  }
+  interface ElementTagNameMap {
+    'scrollable-row': HTMLScrollableRowElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'scrollable-row': JSXElements.ScrollableRowAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ScrollableRowAttributes extends HTMLAttributes {
+      'company'?: any;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface ShuffleContent {
+
+    }
+  }
+
+  interface HTMLShuffleContentElement extends StencilComponents.ShuffleContent, HTMLStencilElement {}
+
+  var HTMLShuffleContentElement: {
+    prototype: HTMLShuffleContentElement;
+    new (): HTMLShuffleContentElement;
+  };
+  interface HTMLElementTagNameMap {
+    'shuffle-content': HTMLShuffleContentElement;
+  }
+  interface ElementTagNameMap {
+    'shuffle-content': HTMLShuffleContentElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'shuffle-content': JSXElements.ShuffleContentAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ShuffleContentAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
 declare global { namespace JSX { interface StencilJSX {} } }

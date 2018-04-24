@@ -6,16 +6,6 @@ import { Component } from "@stencil/core";
   styleUrl: "my-app.css"
 })
 export class MyApp {
-  swService = {
-    getWorkouts: async () => {
-      const response = await fetch(
-        "https://sworkit-api.herokuapp.com/v1/categories/strength"
-      );
-      const json = await response.json();
-      const workouts = json.workouts;
-      return workouts;
-    }
-  };
 
   render() {
     return (
@@ -28,7 +18,10 @@ export class MyApp {
           <ion-route
             url="/app-slots"
             component="app-slots"
-            componentProps={{ swService: this.swService }}
+          />
+          <ion-route
+            url="/shuffle-content"
+            component="shuffle-content"
           />
         </ion-router>
         <ion-nav />
