@@ -1,29 +1,38 @@
-import { Component } from '@stencil/core';
-
+import "@ionic/core";
+import { Component } from "@stencil/core";
 
 @Component({
-  tag: 'my-app',
-  styleUrl: 'my-app.css'
+  tag: "my-app",
+  styleUrl: "my-app.css"
 })
 export class MyApp {
+  swService = {
+    getWorkouts: async () => {
+      const response = await fetch(
+        "https://sworkit-api.herokuapp.com/v1/categories/strength"
+      );
+      const json = await response.json();
+      const workouts = json.workouts;
+      return workouts;
+    }
+  };
 
   render() {
     return (
-      <div>
-        <header>
-          <h1>Stencil App Starter</h1>
-        </header>
+      <ion-app>
+        <ion-router useHash={false}>
+          <ion-route url="/" component="app-home" />
 
-        <main>
-          <stencil-router>
-            <stencil-route url='/' component='app-home' exact={true}>
-            </stencil-route>
+          <ion-route url="/profile/:name" component="app-profile" />
 
-            <stencil-route url='/profile/:name' component='app-profile'>
-            </stencil-route>
-          </stencil-router>
-        </main>
-      </div>
+          <ion-route
+            url="/app-slots"
+            component="app-slots"
+            componentProps={{ swService: this.swService }}
+          />
+        </ion-router>
+        <ion-nav />
+      </ion-app>
     );
   }
 }

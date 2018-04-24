@@ -1,27 +1,21 @@
-import { Component } from '@stencil/core';
-
+import { Component } from "@stencil/core";
 
 @Component({
-  tag: 'app-home',
-  styleUrl: 'app-home.css'
+  tag: "app-home",
+  styleUrl: "app-home.css"
 })
 export class AppHome {
-
   render() {
     return (
-      <div class='app-home'>
+      <div class="app-home">
         <p>
-          Welcome to the Stencil App Starter.
-          You can use this starter to build entire apps all with
-          web components using Stencil!
-          Check out our docs on <a href='https://stenciljs.com'>stenciljs.com</a> to get started.
+          Welcome to the Stencil App Starter. You can use this starter to build
+          entire apps all with web components using Stencil! Check out our docs
+          on <a href="https://stenciljs.com">stenciljs.com</a> to get started.
         </p>
-
-        <stencil-route-link url='/profile/stencil'>
-          <button>
-            Profile page
-          </button>
-        </stencil-route-link>
+        <ion-button href="/app-slots">App Slots</ion-button>
+        <ion-button href="/reordered-content">Reordered Content</ion-button>
+        <ion-button href="/profile/stencil">Profile page</ion-button>
       </div>
     );
   }

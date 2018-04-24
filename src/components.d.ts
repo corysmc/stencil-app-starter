@@ -23,11 +23,9 @@ declare global {
   interface HTMLAttributes {}
 }
 
-import '@stencil/router';
+import 'ionicons';
+import '@ionic/core';
 
-import {
-  MatchResults,
-} from '@stencil/router';
 
 declare global {
 
@@ -66,7 +64,7 @@ declare global {
 
   namespace StencilComponents {
     interface AppProfile {
-      'match': MatchResults;
+      'name': string;
     }
   }
 
@@ -89,7 +87,40 @@ declare global {
   }
   namespace JSXElements {
     export interface AppProfileAttributes extends HTMLAttributes {
-      'match'?: MatchResults;
+      'name'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface AppSlots {
+
+    }
+  }
+
+  interface HTMLAppSlotsElement extends StencilComponents.AppSlots, HTMLStencilElement {}
+
+  var HTMLAppSlotsElement: {
+    prototype: HTMLAppSlotsElement;
+    new (): HTMLAppSlotsElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-slots': HTMLAppSlotsElement;
+  }
+  interface ElementTagNameMap {
+    'app-slots': HTMLAppSlotsElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-slots': JSXElements.AppSlotsAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppSlotsAttributes extends HTMLAttributes {
+
     }
   }
 }

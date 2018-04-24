@@ -1,5 +1,5 @@
 dist/
-!www/favicon.ico
+www/
 
 *~
 *.sw[mnpcod]
