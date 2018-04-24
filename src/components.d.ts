@@ -127,4 +127,72 @@ declare global {
   }
 }
 
+
+declare global {
+
+  namespace StencilComponents {
+    interface ShuffleContent {
+
+    }
+  }
+
+  interface HTMLShuffleContentElement extends StencilComponents.ShuffleContent, HTMLStencilElement {}
+
+  var HTMLShuffleContentElement: {
+    prototype: HTMLShuffleContentElement;
+    new (): HTMLShuffleContentElement;
+  };
+  interface HTMLElementTagNameMap {
+    'shuffle-content': HTMLShuffleContentElement;
+  }
+  interface ElementTagNameMap {
+    'shuffle-content': HTMLShuffleContentElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'shuffle-content': JSXElements.ShuffleContentAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ShuffleContentAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface SlotComponent {
+      'first': string;
+      'last': string;
+    }
+  }
+
+  interface HTMLSlotComponentElement extends StencilComponents.SlotComponent, HTMLStencilElement {}
+
+  var HTMLSlotComponentElement: {
+    prototype: HTMLSlotComponentElement;
+    new (): HTMLSlotComponentElement;
+  };
+  interface HTMLElementTagNameMap {
+    'slot-component': HTMLSlotComponentElement;
+  }
+  interface ElementTagNameMap {
+    'slot-component': HTMLSlotComponentElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'slot-component': JSXElements.SlotComponentAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface SlotComponentAttributes extends HTMLAttributes {
+      'first'?: string;
+      'last'?: string;
+    }
+  }
+}
+
 declare global { namespace JSX { interface StencilJSX {} } }
