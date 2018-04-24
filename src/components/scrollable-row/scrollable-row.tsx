@@ -17,7 +17,6 @@ export class ScrollableRow {
               return (
                 <li>
                   <ion-button fill="clear" href={`/profile/${person.name}`}>
-                    <img src={person.image} />
                     <h6>{person.name}</h6>
                   </ion-button>
                 </li>
