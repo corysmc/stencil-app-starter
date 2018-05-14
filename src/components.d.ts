@@ -224,4 +224,37 @@ declare global {
   }
 }
 
+
+declare global {
+
+  namespace StencilComponents {
+    interface WatchBug {
+      'update': string;
+    }
+  }
+
+  interface HTMLWatchBugElement extends StencilComponents.WatchBug, HTMLStencilElement {}
+
+  var HTMLWatchBugElement: {
+    prototype: HTMLWatchBugElement;
+    new (): HTMLWatchBugElement;
+  };
+  interface HTMLElementTagNameMap {
+    'watch-bug': HTMLWatchBugElement;
+  }
+  interface ElementTagNameMap {
+    'watch-bug': HTMLWatchBugElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'watch-bug': JSXElements.WatchBugAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface WatchBugAttributes extends HTMLAttributes {
+      'update'?: string;
+    }
+  }
+}
+
 declare global { namespace JSX { interface StencilJSX {} } }

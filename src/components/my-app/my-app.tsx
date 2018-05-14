@@ -1,12 +1,17 @@
 import "@ionic/core";
-import { Component } from "@stencil/core";
+import { Component, State } from "@stencil/core";
 
 @Component({
   tag: "my-app",
   styleUrl: "my-app.css"
 })
 export class MyApp {
-
+  @State() update: string = "Not Updated Yet";
+  componentDidLoad() {
+    setTimeout(() => {
+      this.update = "Cory";
+    }, 1000);
+  }
   render() {
     return (
       <ion-app>
@@ -15,13 +20,12 @@ export class MyApp {
 
           <ion-route url="/profile/:name" component="app-profile" />
 
+          <ion-route url="/app-slots" component="app-slots" />
+          <ion-route url="/shuffle-content" component="shuffle-content" />
           <ion-route
-            url="/app-slots"
-            component="app-slots"
-          />
-          <ion-route
-            url="/shuffle-content"
-            component="shuffle-content"
+            url="/watch-bug"
+            component="watch-bug"
+            componentProps={{ update: this.update }}
           />
         </ion-router>
         <ion-nav />
