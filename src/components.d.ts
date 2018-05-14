@@ -3,6 +3,9 @@
  * It contains typing information for all components that exist in this project
  * and imports for stencil collections that might be configured in your stencil.config.js file
  */
+
+import '@stencil/core';
+
 declare global {
   namespace JSX {
     interface Element {}
@@ -13,99 +16,125 @@ declare global {
   interface HTMLStencilElement extends HTMLElement {
     componentOnReady(): Promise<this>;
     componentOnReady(done: (ele?: this) => void): void;
+
+    forceUpdate(): void;
   }
+<<<<<<< HEAD
 
   interface HTMLAttributes {}
 }
 
 import '@stencil/router';
+=======
 
+  interface HTMLAttributes {}
+}
+>>>>>>> ionic-team/master
+
+import '@stencil/router';
 
 import {
-  AppHome as AppHome
-} from './components/app-home/app-home';
+  MatchResults,
+} from '@stencil/router';
 
 declare global {
-  interface HTMLAppHomeElement extends AppHome, HTMLStencilElement {
+
+  namespace StencilComponents {
+    interface AppHome {
+
+    }
   }
+
+  interface HTMLAppHomeElement extends StencilComponents.AppHome, HTMLStencilElement {}
+
   var HTMLAppHomeElement: {
     prototype: HTMLAppHomeElement;
     new (): HTMLAppHomeElement;
   };
   interface HTMLElementTagNameMap {
-    "app-home": HTMLAppHomeElement;
+    'app-home': HTMLAppHomeElement;
   }
   interface ElementTagNameMap {
-    "app-home": HTMLAppHomeElement;
+    'app-home': HTMLAppHomeElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "app-home": JSXElements.AppHomeAttributes;
+      'app-home': JSXElements.AppHomeAttributes;
     }
   }
   namespace JSXElements {
     export interface AppHomeAttributes extends HTMLAttributes {
-      
+
     }
   }
 }
 
 
-import {
-  AppProfile as AppProfile
-} from './components/app-profile/app-profile';
-
 declare global {
-  interface HTMLAppProfileElement extends AppProfile, HTMLStencilElement {
+
+  namespace StencilComponents {
+    interface AppProfile {
+      'match': MatchResults;
+    }
   }
+
+  interface HTMLAppProfileElement extends StencilComponents.AppProfile, HTMLStencilElement {}
+
   var HTMLAppProfileElement: {
     prototype: HTMLAppProfileElement;
     new (): HTMLAppProfileElement;
   };
   interface HTMLElementTagNameMap {
-    "app-profile": HTMLAppProfileElement;
+    'app-profile': HTMLAppProfileElement;
   }
   interface ElementTagNameMap {
-    "app-profile": HTMLAppProfileElement;
+    'app-profile': HTMLAppProfileElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "app-profile": JSXElements.AppProfileAttributes;
+      'app-profile': JSXElements.AppProfileAttributes;
     }
   }
   namespace JSXElements {
     export interface AppProfileAttributes extends HTMLAttributes {
+<<<<<<< HEAD
       user?: any;
+=======
+      'match'?: MatchResults;
+>>>>>>> ionic-team/master
     }
   }
 }
 
 
-import {
-  MyApp as MyApp
-} from './components/my-app/my-app';
-
 declare global {
-  interface HTMLMyAppElement extends MyApp, HTMLStencilElement {
+
+  namespace StencilComponents {
+    interface MyApp {
+
+    }
   }
+
+  interface HTMLMyAppElement extends StencilComponents.MyApp, HTMLStencilElement {}
+
   var HTMLMyAppElement: {
     prototype: HTMLMyAppElement;
     new (): HTMLMyAppElement;
   };
   interface HTMLElementTagNameMap {
-    "my-app": HTMLMyAppElement;
+    'my-app': HTMLMyAppElement;
   }
   interface ElementTagNameMap {
-    "my-app": HTMLMyAppElement;
+    'my-app': HTMLMyAppElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "my-app": JSXElements.MyAppAttributes;
+      'my-app': JSXElements.MyAppAttributes;
     }
   }
   namespace JSXElements {
     export interface MyAppAttributes extends HTMLAttributes {
-      
+
     }
   }
 }
